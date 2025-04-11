@@ -6,18 +6,18 @@
 
 #### Download
 
-The Excalibur Tunnel Client is available as a `.deb` package. You can download it using `curl` or `wget`. Replace `<download-url>` with the actual URL of the package.
+The Excalibur Tunnel Client is available as a `.deb` package. You can download it using `curl` or `wget`.
 
 ```shell
-curl -sL <download-url>
+curl -sL https://github.com/excalibur-enterprise/excalibur-tunnel-client/releases/download/v4.0.0/excalibur-tunnel_4.0.0-1_amd64.deb
 ```
 
 #### Install
 
-The downloaded package can be installed using `dpkg`. Replace `<downloaded-package>` with the actual name of the downloaded package.
+The downloaded package can be installed using `dpkg`.
 
 ```shell
-sudo dpkg -i <downloaded-package>.deb
+sudo dpkg -i excalibur-tunnel_4.0.0-1_amd64.deb
 ```
 
 #### Activate
@@ -32,18 +32,18 @@ sudo excalibur-tunnel activate --server-url <server-url> --code <code>
 
 #### Download
 
-The Excalibur Tunnel Client is available as an `.rpm` package. You can download it using `curl` or `wget`. Replace `<download-url>` with the actual URL of the package.
+The Excalibur Tunnel Client is available as an `.rpm` package. You can download it using `curl` or `wget`.
 
 ```shell
-curl -sL <download-url>
+curl -sL https://github.com/excalibur-enterprise/excalibur-tunnel-client/releases/download/v4.0.0/excalibur-tunnel-4.0.0-1.x86_64.rpm
 ```
 
 #### Install
 
-The downloaded package can be installed using `rpm`. Replace `<downloaded-package>` with the actual name of the downloaded package.
+The downloaded package can be installed using `rpm`.
 
 ```shell
-sudo rpm -i <downloaded-package>.rpm
+sudo rpm -i excalibur-tunnel-4.0.0-1.x86_64.rpm
 ```
 
 #### Activate
@@ -102,9 +102,9 @@ During the deactivation process, the private key and certificate are removed fro
 sudo excalibur-tunnel deactivate
 ```
 
-## Config.toml
+## Conf.toml
 
-The Excalibur Tunnel Client uses a configuration file named `config.toml` to store the configuration settings. The configuration file is located at `/etc/excalibur/tunnel/config.toml`. The configuration file is in TOML format and contains the following sections:
+The Excalibur Tunnel Client uses a configuration file named `conf.toml` to store the configuration settings. The configuration file is located at `/etc/excalibur/tunnel/conf.toml`. The configuration file is in TOML format and contains the following sections:
 
 ```toml
 [general]
@@ -112,9 +112,7 @@ server_url = '<string: server url>'  # URL for Excalibur API endpoints
 
 [tunnel]
 host = '<string: tunnel service host>'  # Hostname for the tunnel connection
-id = '<number: tunnel ID>'               # Unique tunnel identifier
 proxy_url = '<string: proxy url>'      # Optional: Custom proxy URL (if different from server_url)
-tenant_id = '<number: tenant ID>'        # Tenant identifier
 ```
 
 
