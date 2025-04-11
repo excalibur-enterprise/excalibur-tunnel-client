@@ -124,7 +124,7 @@ The connections are established using the `tunnelHost` and `serverUrl` returned 
 1. **Control Channel**: This connection is used to send/receive control messages to the Excalibur Tunnel Server.
 2. **Data Channel**: This connection is used to open a tunnel connecting the local network to the Excalibur Cloud.
 
-![Excalibur Tunnel Architecture](docs/images/image.png "Excalibur Tunnel Connection Architecture")
+![Excalibur Tunnel Architecture](images/image.png "Excalibur Tunnel Connection Architecture")
 
 #### Data Channel
 
