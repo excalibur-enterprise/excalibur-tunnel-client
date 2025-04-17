@@ -1,0 +1,107 @@
+END-USER LICENSE AGREEMENT (EULA)
+Excalibur Tunnel Client
+Version 1.0
+Effective Date: April 16, 2025
+
+IMPORTANT – READ CAREFULLY: This End-User License Agreement (“Agreement”) is a legal agreement between you (either an individual or a single legal entity) (“Licensee”) and Excalibur s.r.o., a limited liability company organized under the laws of the Slovak Republic, with its registered office at [Insert Company Address] (“Licensor”).
+
+BY INSTALLING, COPYING, ACCESSING, OR OTHERWISE USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL OR USE THE SOFTWARE. IN SUCH CASE, YOU MUST DELETE ALL COPIES IN YOUR POSSESSION.
+
+1. DEFINITIONS
+
+1.1 “Software” shall mean the Excalibur Tunnel Client, including any and all associated files, components, updates, patches, online services, or related materials provided by Licensor, whether in Alpha, Beta, trial, pre-release, production, free, or premium form.
+
+1.2 “Documentation” shall mean all user guides, installation guides, manuals, and any other documentation provided with the Software.
+
+1.3 “Excalibur SAM” shall refer to the proprietary Excalibur Streamed Access Management platform, owned and operated by Licensor.
+
+2. GRANT OF LICENSE
+
+2.1 Subject to the terms and conditions of this Agreement, Licensor hereby grants Licensee a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to install and use the Software solely in conjunction with an active, authorized subscription to the Excalibur SAM platform.
+
+2.2 The Software may only be used for the Licensee’s internal operations. This license does not grant the right to use the Software as a standalone product or for any purposes unrelated to the Excalibur SAM service.
+
+2.3 This license permits installation and use of the Software within the Licensee’s organization, strictly on systems owned, leased, or controlled by the Licensee.
+
+3. LICENSE RESTRICTIONS
+
+Licensee expressly acknowledges and agrees that the following restrictions shall apply:
+
+3.1 The Software may not be copied, reproduced, or distributed in whole or in part, whether electronically, physically, or otherwise, to any third party, without the prior written consent of Licensor.
+
+3.2 Licensee shall not:
+   a) Reverse engineer, decompile, disassemble, translate, or attempt to derive the source code or internal logic of the Software;
+   b) Modify, adapt, alter, or create derivative works based on the Software or Documentation;
+   c) Sell, rent, lease, sublicense, lend, resell, assign, or otherwise transfer any rights in or to the Software;
+   d) Circumvent any license key, activation mechanism, encryption, or digital rights management feature incorporated into the Software;
+   e) Use the Software in any manner that violates applicable laws or regulations, including laws governing data protection, cybersecurity, or intellectual property.
+
+3.3 The Software is not intended for use in high-risk environments requiring fail-safe performance, including but not limited to the operation of nuclear facilities, air traffic control systems, life-support machines, or military applications.
+
+4. OWNERSHIP AND INTELLECTUAL PROPERTY
+
+4.1 All right, title, and interest in and to the Software and Documentation, including all intellectual property rights therein, are and shall remain the exclusive property of Licensor and its licensors.
+
+4.2 Licensee acknowledges that no ownership rights are conveyed under this Agreement. The Software is licensed, not sold.
+
+4.3 Licensee shall not remove, alter, or obscure any proprietary notices, labels, or marks on the Software or Documentation.
+
+5. THIRD-PARTY COMPONENTS
+
+5.1 The Software may include or depend upon third-party libraries or components licensed under permissive open-source licenses such as the MIT License, Apache License 2.0, and BSD Licenses.
+
+5.2 Licensee acknowledges and agrees to comply with all applicable third-party license terms, which are made available in the accompanying NOTICE.md file included with the Software.
+
+5.3 Licensor makes no warranties or representations with respect to third-party components.
+
+6. AUTOMATIC UPDATES AND INTERNET CONNECTIVITY
+
+6.1 The Software may automatically connect to Licensor’s servers to verify license validity, check for updates, download patches or enhancements, or send anonymized technical data for quality improvement purposes.
+
+6.2 By using the Software, Licensee consents to such automatic communications. All data collected shall be processed in accordance with applicable laws and Licensor’s privacy practices.
+
+6.3 Licensee is solely responsible for any data charges or network usage costs incurred through such activity.
+
+7. NO WARRANTY
+
+7.1 THE SOFTWARE IS PROVIDED “AS IS” AND “AS AVAILABLE,” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND.
+
+7.2 TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, LICENSOR EXPRESSLY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, OR ACCURACY OF RESULTS.
+
+8. LIMITATION OF LIABILITY
+
+8.1 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL LICENSOR BE LIABLE TO LICENSEE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF BUSINESS PROFITS, REVENUE, DATA, GOODWILL, OR USE, ARISING FROM OR RELATED TO THE SOFTWARE OR THIS AGREEMENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8.2 IN NO EVENT SHALL LICENSOR’S AGGREGATE LIABILITY EXCEED THE AMOUNT PAID BY LICENSEE FOR THE SOFTWARE, IF ANY, IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
+
+9. BETA SOFTWARE
+
+9.1 If the Software is labeled as a “Beta”, “Alpha”, or “Pre-Release” version, Licensee understands and acknowledges that such versions are experimental and may not operate reliably or correctly.
+
+9.2 Beta Software is provided solely for evaluation and feedback purposes and is not suitable for production use.
+
+9.3 Licensor may collect feedback from Licensee regarding Beta Software and use such feedback freely without obligation or compensation. All intellectual property rights arising from such feedback shall vest in Licensor.
+
+10. TERMINATION
+
+10.1 This Agreement shall automatically terminate without notice if Licensee fails to comply with any provision hereof.
+
+10.2 Upon termination, Licensee shall immediately cease all use of the Software, remove it from all systems, and destroy all copies in its possession.
+
+10.3 Termination shall not relieve Licensee of any obligations or liabilities accrued prior to the date of termination.
+
+11. GOVERNING LAW AND JURISDICTION
+
+11.1 This Agreement shall be governed by and construed in accordance with the laws of the Slovak Republic, without regard to its conflict of law principles.
+
+11.2 All disputes arising out of or in connection with this Agreement shall be subject to the exclusive jurisdiction of the competent courts of the Slovak Republic.
+
+12. ENTIRE AGREEMENT
+
+12.1 This Agreement constitutes the entire agreement between Licensee and Licensor with respect to the Software and supersedes all prior or contemporaneous communications, whether written or oral.
+
+12.2 If any provision of this Agreement is found to be unenforceable or invalid, the remaining provisions shall remain in full force and effect.
+
+12.3 No waiver of any term or condition herein shall be deemed a further or continuing waiver of such term or any other.
+
+© 2015–2025 Excalibur s.r.o. All rights reserved.
