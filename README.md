@@ -435,7 +435,7 @@ Having issues or need help? We're here to assist you!
 
 ## 🙏 Acknowledgments
 
-We sincerely thank all contributors, users, and supporters of the Excalibur Tunnel Client project. For detailed acknowledgments and notices, please refer to [NOTICE.md](./notice.md).
+We sincerely thank all contributors, users, and supporters of the Excalibur Tunnel Client project. For detailed acknowledgments and notices, please refer to [NOTICE.md](./NOTICE.md).
 
 ---
 
