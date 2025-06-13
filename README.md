@@ -25,6 +25,8 @@ It provides a **secure** and **reliable** connection between your local network 
   - [✨ Key Features](#-key-features)
   - [🚀 Installation Guide](#-installation-guide)
     - [📋 Prerequisites](#-prerequisites)
+      - [For Linux Systems](#for-linux-systems)
+      - [For Windows Systems](#for-windows-systems)
     - [Debian](#debian)
       - [Download](#download)
       - [Install](#install)
@@ -40,22 +42,56 @@ It provides a **secure** and **reliable** connection between your local network 
       - [Verify Installation with systemd](#verify-installation-with-systemd-1)
       - [Activate](#activate-1)
     - [MSI Installer](#msi-installer)
-      - [Work in Progress](#work-in-progress)
+      - [Download](#download-2)
+      - [Install](#install-2)
+      - [Verify Installation](#verify-installation-2)
+      - [Uninstall](#uninstall)
   - [⚙️ Management of the Excalibur Tunnel Client](#️-management-of-the-excalibur-tunnel-client)
-    - [Start the Service](#start-the-service)
-    - [Stop the Service](#stop-the-service)
-    - [Restart the Service](#restart-the-service)
-    - [Check the Service Status](#check-the-service-status)
+    - [Linux Systems](#linux-systems)
+      - [Start the Service](#start-the-service)
+      - [Stop the Service](#stop-the-service)
+      - [Restart the Service](#restart-the-service)
+      - [Check the Service Status](#check-the-service-status)
+    - [Windows Systems](#windows-systems)
+      - [Using Services Management Console](#using-services-management-console)
+      - [Using Command Line (PowerShell or Command Prompt as Administrator)](#using-command-line-powershell-or-command-prompt-as-administrator)
+      - [Using PowerShell (as Administrator)](#using-powershell-as-administrator)
   - [🔐 Activation](#-activation)
     - [Command](#command)
     - [Process Overview](#process-overview)
     - [Data Sent to the Server](#data-sent-to-the-server)
     - [Data Received from the Server](#data-received-from-the-server)
     - [File Storage](#file-storage)
+      - [Linux Systems](#linux-systems-1)
+      - [Windows Systems](#windows-systems-1)
   - [Deactivation](#deactivation)
+    - [Linux Systems](#linux-systems-2)
+    - [Windows Systems](#windows-systems-2)
   - [🗑️ Uninstalling the Excalibur Tunnel Client](#️-uninstalling-the-excalibur-tunnel-client)
-    - [Debian-based Systems](#debian-based-systems)
-    - [Red Hat-based Systems](#red-hat-based-systems)
+    - [Linux Systems](#linux-systems-3)
+      - [Debian-based Systems](#debian-based-systems)
+      - [Red Hat-based Systems](#red-hat-based-systems)
+    - [Windows Systems](#windows-systems-3)
+      - [Using Control Panel](#using-control-panel)
+      - [Using Command Line](#using-command-line)
+  - [Setup](#setup)
+    - [Running the Setup](#running-the-setup)
+    - [Configuration Options](#configuration-options)
+      - [HTTP Proxy Configuration (Optional)](#http-proxy-configuration-optional)
+      - [General Configuration](#general-configuration)
+      - [Log Level Configuration (Optional)](#log-level-configuration-optional)
+    - [Saving Changes](#saving-changes)
+  - [Journalctl Querying Logs](#journalctl-querying-logs)
+    - [Basic Log Viewing](#basic-log-viewing)
+    - [Real-time Log Following](#real-time-log-following)
+    - [Filtering Logs by Level](#filtering-logs-by-level)
+    - [Filtering JSON Logs with grep](#filtering-json-logs-with-grep)
+    - [Time-based Filtering](#time-based-filtering)
+    - [Formatting Output](#formatting-output)
+    - [Viewing Boot-specific Logs](#viewing-boot-specific-logs)
+    - [Combining Filters](#combining-filters)
+  - [Windows Log Files](#windows-log-files)
+    - [Log Rotation and Retention](#log-rotation-and-retention)
   - [📞 Support](#-support)
   - [🙏 Acknowledgments](#-acknowledgments)
 
@@ -162,8 +198,17 @@ By combining these features, the Excalibur Tunnel Client provides a secure, reli
 
 Before installing the Excalibur Tunnel Client, ensure your system meets the following requirements:
 
--   **Operating System**: Linux (Debian/Ubuntu or Red Hat/CentOS)
+#### For Linux Systems
+
+-   **Operating System**: Debian/Ubuntu or Red Hat/CentOS
 -   **Privileges**: Administrative (sudo) privileges
+-   **Network**: Connectivity to the Excalibur Cloud
+-   **Activation Code**: Provided by Excalibur Enterprise
+
+#### For Windows Systems
+
+-   **Operating System**: Windows 10 or Windows Server 2016 (or newer)
+-   **Privileges**: Administrator rights
 -   **Network**: Connectivity to the Excalibur Cloud
 -   **Activation Code**: Provided by Excalibur Enterprise
 
@@ -311,41 +356,159 @@ For detailed activation instructions, refer to the Activation section.
 
 ### MSI Installer
 
-#### Work in Progress
+#### Download
 
-The MSI installer for the Excalibur Tunnel Client is currently under development and will be available soon. Stay tuned for updates on our [GitHub Releases page](https://github.com/excalibur-enterprise/excalibur-tunnel-client/releases).
+The Excalibur Tunnel Client is available as an `.msi` installer package for Windows systems. You can download it from the [GitHub Releases page](https://github.com/excalibur-enterprise/excalibur-tunnel-client/releases).
+
+#### Install
+
+To install the Excalibur Tunnel Client on Windows:
+
+1. **Interactive Installation**:
+
+    - Double-click the downloaded MSI file
+    - Follow the installation wizard
+    - Complete the installation
+
+This will install the Excalibur Tunnel Client as a Windows service that starts automatically and is configured to restart on failure.
+
+#### Verify Installation
+
+After installation, you can verify the service status through the Windows Services management console:
+
+1. Press `Win + R`, then type `services.msc` and press Enter
+2. Look for the "Excalibur Tunnel" service in the list
+3. The service should be set to "Automatic" startup and show status as "Running"
+
+#### Activate
+
+To activate the Excalibur Tunnel Client, you need to run the activation command in an elevated Command Prompt or PowerShell window:
+
+```cmd
+"C:\Program Files\Excalibur\Tunnel\ExcaliburTunnel.exe" activate --server-url <server-url> --code <code>
+```
+
+Or using PowerShell as Administrator:
+
+```powershell
+& 'C:\Program Files\Excalibur\Tunnel\ExcaliburTunnel.exe' activate --server-url <server-url> --code <code>
+```
+
+#### Uninstall
+
+To uninstall the Excalibur Tunnel Client:
+
+1. Go to Control Panel > Programs > Programs and Features
+2. Select "Excalibur Tunnel Client" from the list
+3. Click "Uninstall" and follow the prompts
+
+For silent uninstallation:
+
+```cmd
+msiexec /x excalibur-tunnel-client-<version>.msi /qn
+```
 
 ## ⚙️ Management of the Excalibur Tunnel Client
 
-The Excalibur Tunnel Client can be managed using `systemctl`. The service is named `excalibur-tunnel`. Below are the commands for managing the service:
+### Linux Systems
 
-### Start the Service
+On Linux systems, the Excalibur Tunnel Client can be managed using `systemctl`. The service is named `excalibur-tunnel`. Below are the commands for managing the service:
+
+#### Start the Service
+
 To start the Excalibur Tunnel Client service, use the following command:
+
 ```bash
 sudo systemctl start excalibur-tunnel
 ```
+
 This will initialize and run the tunnel client.
 
-### Stop the Service
+#### Stop the Service
+
 To stop the Excalibur Tunnel Client service, use the following command:
+
 ```bash
 sudo systemctl stop excalibur-tunnel
 ```
+
 This will terminate the tunnel client service.
 
-### Restart the Service
+#### Restart the Service
+
 To restart the Excalibur Tunnel Client service, use the following command:
+
 ```bash
 sudo systemctl restart excalibur-tunnel
 ```
+
 This is useful for applying configuration changes or recovering from errors.
 
-### Check the Service Status
+#### Check the Service Status
+
 To check the current status of the Excalibur Tunnel Client service, use the following command:
+
 ```bash
 sudo systemctl status excalibur-tunnel
 ```
+
 This will display whether the service is active, inactive, or has encountered any issues.
+
+### Windows Systems
+
+On Windows systems, the Excalibur Tunnel Client is installed as a Windows service named "ExcaliburTunnel". Here's how to manage it:
+
+#### Using Services Management Console
+
+1. Press `Win + R`, type `services.msc`, and press Enter to open the Services management console
+2. Find "Excalibur Tunnel Client" in the list of services
+3. Right-click on it to Start, Stop, Restart, or check Properties
+
+#### Using Command Line (PowerShell or Command Prompt as Administrator)
+
+Start the service:
+
+```cmd
+sc start ExcaliburTunnel
+```
+
+Stop the service:
+
+```cmd
+sc stop ExcaliburTunnel
+```
+
+Query the service status:
+
+```cmd
+sc query ExcaliburTunnel
+```
+
+#### Using PowerShell (as Administrator)
+
+Start the service:
+
+```powershell
+Start-Service -Name ExcaliburTunnel
+```
+
+Stop the service:
+
+```powershell
+Stop-Service -Name ExcaliburTunnel
+```
+
+Restart the service:
+
+```powershell
+Restart-Service -Name ExcaliburTunnel
+```
+
+Check the service status:
+
+```powershell
+Get-Service -Name ExcaliburTunnel
+```
 
 ## 🔐 Activation
 
@@ -373,34 +536,45 @@ Replace `<server-url>` with the URL of the Excalibur Server and `<code>` with th
 
 The following data is sent to the Excalibur API during activation:
 
-| Field       | Type   | Description                              | Example                                  |
-|-------------|--------|------------------------------------------|------------------------------------------|
-| `csr`       | String | The certificate signing request.         | `MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ...` |
-| `code`      | String | The activation code provided by Excalibur. | `ABC123XYZ`                              |
-
+| Field  | Type   | Description                                | Example                                         |
+| ------ | ------ | ------------------------------------------ | ----------------------------------------------- |
+| `csr`  | String | The certificate signing request.           | `MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ...` |
+| `code` | String | The activation code provided by Excalibur. | `ABC123XYZ`                                     |
 
 ### Data Received from the Server
 
 The following data is returned by the Excalibur API upon successful activation:
 
-| Field             | Type   | Description                                      | Example                                  |
-|-------------------|--------|--------------------------------------------------|------------------------------------------|
-| `certificate`     | String | The signed certificate issued by the server.     | `MIIC+DCCAeCgAwIBAgIRAK...`              |
-| `chain`           | String | The CA chain for verifying the server identity.  | `MIIDdzCCAl+gAwIBAgIRAK...`              |
+| Field         | Type   | Description                                     | Example                     |
+| ------------- | ------ | ----------------------------------------------- | --------------------------- |
+| `certificate` | String | The signed certificate issued by the server.    | `MIIC+DCCAeCgAwIBAgIRAK...` |
+| `chain`       | String | The CA chain for verifying the server identity. | `MIIDdzCCAl+gAwIBAgIRAK...` |
 
 ### File Storage
 
 After activation, the following files are created and stored securely:
 
-| File Path                                | Description                          |
-|-----------------------------------------|--------------------------------------|
-| `/var/lib/excalibur/tunnel/private`     | Contains the generated private key.  |
-| `/var/lib/excalibur/tunnel/certs`       | Contains the signed certificate and CA chain. |
-| `/etc/excalibur/tunnel/conf.toml`       | Contains the configuration details for the tunnel client. |
+#### Linux Systems
+
+| File Path                           | Description                                               |
+| ----------------------------------- | --------------------------------------------------------- |
+| `/var/lib/excalibur/tunnel/private` | Contains the generated private key.                       |
+| `/var/lib/excalibur/tunnel/certs`   | Contains the signed certificate and CA chain.             |
+| `/etc/excalibur/tunnel/conf.toml`   | Contains the configuration details for the tunnel client. |
+
+#### Windows Systems
+
+| File Path                                  | Description                                               |
+| ------------------------------------------ | --------------------------------------------------------- |
+| `%ProgramData%\Excalibur\Tunnel\private`   | Contains the generated private key.                       |
+| `%ProgramData%\Excalibur\Tunnel\certs`     | Contains the signed certificate and CA chain.             |
+| `%ProgramData%\Excalibur\Tunnel\conf.toml` | Contains the configuration details for the tunnel client. |
 
 This ensures that the client is ready to establish secure connections with the Excalibur Tunnel Server.
 
 ## Deactivation
+
+### Linux Systems
 
 During the deactivation process, the private key and certificate are removed from the path `/var/lib/excalibur/tunnel/private` and `/var/lib/excalibur/tunnel/certs` respectively. The deactivation command is as follows:
 
@@ -408,30 +582,258 @@ During the deactivation process, the private key and certificate are removed fro
 sudo excalibur-tunnel deactivate
 ```
 
+### Windows Systems
+
+On Windows, the deactivation process removes the private key and certificate from the paths `%ProgramData%\Excalibur\Tunnel\private` and `%ProgramData%\Excalibur\Tunnel\certs` respectively. The deactivation command is as follows:
+
+```cmd
+# Run as Administrator
+"C:\Program Files\Excalibur\Tunnel\ExcaliburTunnel.exe" deactivate
+```
+
+Or using PowerShell as Administrator:
+
+```powershell
+& 'C:\Program Files\Excalibur\Tunnel\ExcaliburTunnel.exe' deactivate
+```
+
 This ensures that the client is securely deactivated and no longer has access to the Excalibur Tunnel Server.
 
 ## 🗑️ Uninstalling the Excalibur Tunnel Client
 
-To uninstall the Excalibur Tunnel Client, use the following commands based on your package manager:
+### Linux Systems
 
-### Debian-based Systems
+To uninstall the Excalibur Tunnel Client on Linux, use the following commands based on your package manager:
+
+#### Debian-based Systems
+
 ```bash
 sudo apt-get remove --purge excalibur-tunnel
 ```
 
-### Red Hat-based Systems
+#### Red Hat-based Systems
+
 ```bash
 sudo yum remove excalibur-tunnel
+```
+
+### Windows Systems
+
+To uninstall the Excalibur Tunnel Client on Windows:
+
+#### Using Control Panel
+
+1. Go to Control Panel > Programs > Programs and Features
+2. Find "Excalibur Tunnel Client" in the list
+3. Click "Uninstall" and follow the prompts
+
+#### Using Command Line
+
+```cmd
+# Run as Administrator
+msiexec /x {ProductCode} /qn
+```
+
+Or with the MSI file:
+
+```cmd
+msiexec /x excalibur-tunnel-client-<version>.msi /qn
 ```
 
 > [!WARNING]
 > Uninstalling the Excalibur Tunnel Client will remove all associated keys and configuration files. After reinstallation, you will need to perform a new activation process to re-establish the tunnel.
 
+## Setup
+
+The Excalibur Tunnel application can be easily configured using an interactive setup form. This form allows you to modify the configuration without manually editing the `config.toml` file.
+
+### Running the Setup
+
+To access the configuration form, run:
+
+```bash
+sudo excalibur-tunnel setup
+```
+
+### Configuration Options
+
+The setup form provides the following configuration sections:
+
+#### HTTP Proxy Configuration (Optional)
+
+If your network requires a proxy to connect to external services, you can configure:
+
+- **Proxy URL**: The full URL of your proxy server (e.g., http://proxy.example.com:8080)
+- **Proxy Username**: Username for proxy authentication (if required)
+- **Proxy Password**: Password for proxy authentication (if required)
+
+#### General Configuration
+
+- **Server URL**: The URL of the Excalibur server (e.g., https://azure-lab-0.xclbr.com)
+
+#### Log Level Configuration (Optional)
+
+- **Log Level**: Controls the verbosity of application logs. Available options:
+  - `debug`: Most verbose, shows all messages including detailed debugging information
+  - `info`: Shows informational messages about normal operation
+  - `warn`: Shows only warning messages and more severe issues
+  - `error`: Shows only error messages
+  - `fatal`: Shows only critical errors that cause the application to terminate
+
+### Saving Changes
+
+After making your desired changes, click the **Save** button to update the configuration and apply the new settings. The application will automatically use these settings on subsequent runs.
+
+Click **Close** to exit the setup form without saving changes.
+
+## Journalctl Querying Logs
+
+Excalibur Tunnel uses systemd for service management, meaning all logs are available through `journalctl`. Below are detailed instructions for accessing and filtering these logs.
+
+### Basic Log Viewing
+
+To view all logs for the Excalibur Tunnel service:
+
+```bash
+sudo journalctl -u excalibur-tunnel.service
+```
+
+This command displays all logs from the service, with the oldest entries first.
+
+### Real-time Log Following
+
+To continuously monitor logs as they are generated (similar to `tail -f`):
+
+```bash
+sudo journalctl -u excalibur-tunnel.service -f
+```
+
+This is particularly useful during debugging or when monitoring the service during operation.
+
+### Filtering Logs by Level
+
+Since you've configured the log level in the setup, you may want to filter logs based on their severity. The following commands filter logs by different priority levels:
+
+```bash
+# Show only error logs and above (errors, critical, alerts, emergencies)
+sudo journalctl -u excalibur-tunnel.service -p err
+
+# Show warnings and above (warnings, errors, etc.)
+sudo journalctl -u excalibur-tunnel.service -p warning
+
+# Show informational messages and above
+sudo journalctl -u excalibur-tunnel.service -p info
+
+# Show debug messages and everything above (all messages)
+sudo journalctl -u excalibur-tunnel.service -p debug
+```
+
+### Filtering JSON Logs with grep
+
+Since Excalibur Tunnel generates structured JSON logs, you can use grep to filter logs by specific fields:
+
+```bash
+# Filter for error level logs
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"level":"error"'
+
+# Filter for warning level logs
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"level":"warn"'
+
+# Filter for info level logs
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"level":"info"'
+
+# Filter for debug level logs
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"level":"debug"'
+
+# Filter for specific error messages
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"error":"failed to"'
+
+# Filter by specific component or caller
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"caller":"internal/control_channel.go"'
+```
+
+You can also combine grep filters using pipes:
+
+```bash
+# Find error logs related to HTTP CONNECT
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"level":"error"' | grep 'HTTP CONNECT'
+
+# Exclude certain types of messages
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago" | grep '"level":"error"' | grep -v 'timeout'
+```
+
+### Time-based Filtering
+
+View logs from specific time periods:
+
+```bash
+# View logs from today
+sudo journalctl -u excalibur-tunnel.service --since today
+
+# View logs from the last hour
+sudo journalctl -u excalibur-tunnel.service --since "1 hour ago"
+
+# View logs between specific timestamps
+sudo journalctl -u excalibur-tunnel.service --since "2025-05-13 10:00:00" --until "2025-05-13 11:15:00"
+```
+
+### Formatting Output
+
+For more readable output or for processing logs in scripts:
+
+```bash
+# Output logs in JSON format
+sudo journalctl -u excalibur-tunnel.service -o json
+
+# Show logs with full timestamps
+sudo journalctl -u excalibur-tunnel.service --no-pager -o short-precise
+```
+
+### Viewing Boot-specific Logs
+
+If you're troubleshooting issues that occurred during system startup or after a reboot:
+
+```bash
+# Show logs from the current boot
+sudo journalctl -u excalibur-tunnel.service -b
+
+# Show logs from the previous boot
+sudo journalctl -u excalibur-tunnel.service -b -1
+```
+
+### Combining Filters
+
+You can combine multiple options to create precise queries:
+
+```bash
+# Show error-level logs from the last 24 hours
+sudo journalctl -u excalibur-tunnel.service -p err --since "24 hours ago"
+
+# Show most recent 50 log entries at warning level or above
+sudo journalctl -u excalibur-tunnel.service -p warning -n 50 --no-pager
+```
+
+These commands should help you effectively monitor and troubleshoot your Excalibur Tunnel application by accessing the logs at your configured verbosity level.
+
+## Windows Log Files
+
+The Excalibur Tunnel Client runs as a Windows service and writes its log output to a dedicated file located at `%ProgramData%\Excalibur\Tunnel\logs\excalibur-tunnel.log`. You can open and review this file with any standard text editor.
+
+### Log Rotation and Retention
+
+To manage disk space and ensure log files remain manageable, the Excalibur Tunnel Client employs a log rotation mechanism with the following characteristics:
+
+- **Rotation Trigger:** Logs are rotated once the file size exceeds 50 MB.
+- **Rotation Format:** Old log files are archived in the same directory. Each rotated log file is renamed with a timestamp appended to the base filename. For example, after rotation you might see a file named `excalibur_tunnel-2023-10-01T12-00-00.log`.
+- **Retention Policy:** Compressed rotated log files are retained for up to 7 days. Beyond this period, these old log files are automatically deleted.
+
+This setup ensures that you have access to recent logs for troubleshooting while preventing uncontrolled log file growth.
+
 ## 📞 Support
 
 Having issues or need help? We're here to assist you!
 
-- For issues or feature requests, please use the [Issue Tracker](https://github.com/excalibur-enterprise/excalibur-tunnel-client/issues) in this repository.
+-   For issues or feature requests, please use the [Issue Tracker](https://github.com/excalibur-enterprise/excalibur-tunnel-client/issues) in this repository.
 
 ## 🙏 Acknowledgments
 
