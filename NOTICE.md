@@ -32,6 +32,9 @@ This project includes third-party software components that are licensed under va
 | [subosito/gotenv](https://github.com/subosito/gotenv)                 | v1.6.0         | [MIT](https://github.com/subosito/gotenv/blob/v1.6.0/LICENSE)              | Library for loading environment variables from `.env` files. |
 | [gopkg.in/yaml.v3](https://github.com/go-yaml/yaml)                   | v3.0.1         | [MIT](https://github.com/go-yaml/yaml/blob/v3.0.1/LICENSE)                 | YAML parser and encoder for Go.                              |
 | [kardianos/service](https://github.com/kardianos/service)             | v1.2.2         | [Zlib](https://github.com/kardianos/service/blob/v1.2.2/LICENSE)           | Cross-platform service manager for Go.                       |
+| [go.uber.org/multierr](https://github.com/uber-go/multierr)           | v1.9.0         | [MIT](https://github.com/uber-go/multierr/blob/v1.9.0/LICENSE.txt)         | Error combining utility for Go.                              |
+| [go.uber.org/zap](https://github.com/uber-go/zap)                     | v1.27.0        | [MIT](https://github.com/uber-go/zap/blob/v1.27.0/LICENSE)                 | Fast, structured, leveled logging library for Go.            |
+| [gopkg.in/natefinch/lumberjack.v2](https://github.com/natefinch/lumberjack) | v2.2.1 | [MIT](https://github.com/natefinch/lumberjack/blob/v2.2.1/LICENSE) | A rolling logger for Go. |
 
 ---
 
